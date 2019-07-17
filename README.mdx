@@ -1,0 +1,34 @@
+---
+name: Example
+---
+
+# Example
+
+import { Playground, Props } from "docz";
+import { StyledDiv as StyledDivHelper } from "./README.helper";
+import styled from "@emotion/styled";
+
+This is an example
+
+This will work:
+
+<Playground>
+  <div>
+    {(() => {
+      return <StyledDivHelper>Hello World!</StyledDivHelper>;
+    })()}
+  </div>
+</Playground>
+
+This will fail:
+
+<Playground>
+  <div>
+    {(() => {
+      const MyStyledDiv = styled.div`
+        font-family: monospace;
+      `;
+      return <MyStyledDiv>Hello World!</MyStyledDiv>;
+    })()}
+  </div>
+</Playground>
